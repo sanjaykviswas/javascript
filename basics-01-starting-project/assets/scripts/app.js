@@ -34,6 +34,15 @@ function calculateResult(calculationType) {
   const intialResult = currentResult;
   const enteredInput = getUserNumberInput();
   let mathOperator;
+  if (
+    (calculationType !== "ADD" &&
+      calculationType !== "SUBTRACT" &&
+      calculationType !== "MULTIPLY" &&
+      calculationType !== "DIVIDE") ||
+    !enteredInput
+  ) {
+    return;
+  }
   if (calculationType === "ADD") {
     currentResult += enteredInput;
     mathOperator = "+";
