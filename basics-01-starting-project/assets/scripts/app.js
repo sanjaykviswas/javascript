@@ -30,40 +30,45 @@ function writeToLog(
   console.log(logEntries);
 }
 
-// For adding and displaying result
-function add() {
+function calculateResult(calculationType) {
   const intialResult = currentResult;
   const enteredInput = getUserNumberInput();
-  currentResult += enteredInput;
-  createAndWriteOutput("+", intialResult, enteredInput);
-  writeToLog("ADD", intialResult, enteredInput, currentResult);
+  let mathOperator;
+  if (calculationType === "ADD") {
+    currentResult += enteredInput;
+    mathOperator = "+";
+  } else if (calculationType === "SUBTRACT") {
+    currentResult -= enteredInput;
+    mathOperator = "-";
+  } else if (calculationType === "MULTIPLY") {
+    currentResult *= enteredInput;
+    mathOperator = "*";
+  } else if (calculationType === "DIVIDE") {
+    currentResult /= enteredInput;
+    mathOperator = "/";
+  }
+  createAndWriteOutput(mathOperator, intialResult, enteredInput);
+  writeToLog(calculationType, intialResult, enteredInput, currentResult);
+}
+
+// For adding and displaying result
+function add() {
+  calculateResult("ADD");
 }
 
 // For substracting and displaying result
 function subtract() {
-  const intialResult = currentResult;
-  const enteredInput = getUserNumberInput();
-  currentResult -= enteredInput;
-  createAndWriteOutput("-", intialResult, enteredInput);
-  writeToLog("SUBTRACT", intialResult, enteredInput, currentResult);
+  calculateResult("SUBTRACT");
 }
 
 // For multiplying and displaying result
 function multiply() {
-  const intialResult = currentResult;
-  const enteredInput = getUserNumberInput();
-  currentResult *= enteredInput;
-  createAndWriteOutput("*", intialResult, enteredInput);
-  writeToLog("MULTIPLY", intialResult, enteredInput, currentResult);
+  calculateResult("MULTIPLY");
 }
 
 // For dividing and displaying result
 function divide() {
-  const intialResult = currentResult;
-  const enteredInput = getUserNumberInput();
-  currentResult /= enteredInput;
-  createAndWriteOutput("/", intialResult, enteredInput);
-  writeToLog("DIVIDE", intialResult, enteredInput, currentResult);
+  calculateResult("DIVIDE");
 }
 
 // For listening the event from buttons
