@@ -65,25 +65,25 @@ function calculateResult(calculationType) {
   writeToLog(calculationType, intialResult, enteredInput, currentResult);
 }
 
-// For adding and displaying result
-function add() {
-  calculateResult(CALCULATION_TYPE_ADD);
-}
+// // For adding and displaying result
+// function add() {
+//   calculateResult(CALCULATION_TYPE_ADD);
+// }
 
-// For substracting and displaying result
-function subtract() {
-  calculateResult(CALCULATION_TYPE_SUBTRACT);
-}
+// // For substracting and displaying result
+// function subtract() {
+//   calculateResult(CALCULATION_TYPE_SUBTRACT);
+// }
 
-// For multiplying and displaying result
-function multiply() {
-  calculateResult(CALCULATION_TYPE_MULTIPLY);
-}
+// // For multiplying and displaying result
+// function multiply() {
+//   calculateResult(CALCULATION_TYPE_MULTIPLY);
+// }
 
-// For dividing and displaying result
-function divide() {
-  calculateResult(CALCULATION_TYPE_DIVIDE);
-}
+// // For dividing and displaying result
+// function divide() {
+//   calculateResult(CALCULATION_TYPE_DIVIDE);
+// }
 
 // For listening the event from buttons
 // addBtn.addEventListener("click", add);
